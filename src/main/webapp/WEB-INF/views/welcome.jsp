@@ -39,6 +39,7 @@
 
 </div>
 <canvas id = "game-canvas" width="800" height="800"></canvas>
+${test} XDDDDDDD
 <script>
     var canvas = document.getElementById("game-canvas");
     var context = canvas.getContext("2d");
@@ -139,9 +140,9 @@
             beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
             },
             success: function (result) {
-                // do what ever you want with data
+                alert(result);
             }
-        })
+        });
         if ((position.x != lastX) || (position.y != lastY))
         {
             drawGrid();

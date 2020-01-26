@@ -72,10 +72,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/submit", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
-    public String Submit(@RequestParam("x") int x, @RequestParam("y") int y, @RequestParam("user") String name, @RequestParam("gameID") int gameID){
-        System.out.println(name);
+    public String Submit(Model model, @RequestParam("x") int x, @RequestParam("y") int y, @RequestParam("user") String name, @RequestParam("gameID") int gameID){
+        model.addAttribute("test","121");
+        System.out.println("SIEMANO");
+        return "data";
+    }
+    @RequestMapping(value = "/submit", method = RequestMethod.GET)
+    public String Submit(Model model){
+        model.addAttribute("test","122");
+
         return "welcome";
     }
+
 
 
 
