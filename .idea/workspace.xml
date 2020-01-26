@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d1cc336d-1ad8-42fb-8f10-fec0598a342a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/service/UserDetailsServiceImpl.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/MoveValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/MoveValidation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,22 +26,34 @@
     <expand />
     <select />
   </component>
+
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="c468ca51-7f0b-4a90-817b-874b3ce168bb" />
+    </checked>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="jsf" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Users\piotr\OneDrive\Pulpit\Studia\semestr 3\webGO\GoGameWeb\.idea" />
-      </set>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1617" />
+    <option name="height" value="879" />
   </component>
   <component name="ProjectId" id="1WtSTX3y4Q8QyOZ3kt9upzcX3vh" />
   <component name="ProjectViewState">
@@ -49,50 +63,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="880c6e14-51d1-4538-bd95-234f580e09eb" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="project.structure.last.edited" value="Facets" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.4413793" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580064719197" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.hellokoding.account.model" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\piotr\OneDrive\Pulpit\Studia\semestr 3\webGO\GoGameWeb\src\main\resources" />
+      <recent name="D:\GoGameWeb\GOOD\src\main\java\com\hellokoding\account\GameLogic" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hellokoding.account.managers.GameStateManager" />
-      <module name="account" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL - webgo@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -107,17 +92,30 @@
       <workItem from="1579967408458" duration="982000" />
       <workItem from="1579968547046" duration="75000" />
       <workItem from="1579983660908" duration="1345000" />
-      <workItem from="1580030557132" duration="2427000" />
-      <workItem from="1580051168711" duration="17398000" />
+      <workItem from="1580045268027" duration="17441000" />
     </task>
-    <task id="LOCAL-00001" summary="hibernate">
-      <created>1580071695149</created>
+    <task id="LOCAL-00001" summary="Kubcio ROZPIERDALA">
+      <created>1580061683016</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1580071695149</updated>
+      <updated>1580061683016</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Kubcio ROZPIERDALA &#10;dodano boardSize do gry">
+      <created>1580062993723</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580062993723</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dodanie pseudo logiki gry">
+      <created>1580066827573</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580066827573</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,5 +265,98 @@
       <option name="useAntialiasedConnectors" value="true" />
       <option name="packageNameCompressionLevel" value="2" />
     </Packagediagram>
+    <MESSAGE value="Kubcio ROZPIERDALA" />
+    <MESSAGE value="Kubcio ROZPIERDALA &#10;dodano boardSize do gry" />
+    <MESSAGE value="dodanie pseudo logiki gry" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie pseudo logiki gry" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1580066826038">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580066826038" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580065449271" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580065449271" />
+    <state x="465" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1580065449271" />
+    <state x="465" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580065449271" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1580065449271" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1580065449271" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>account:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>JPA</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring|account</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
