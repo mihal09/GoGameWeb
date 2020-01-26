@@ -100,7 +100,6 @@ public class UserController {
             currentBoard = gameState.getGrid();
             boardSize = gameEntity.getBoardSize();
             char player;
-            gameManager.getGame.
             String futureBoard = MoveValidation.MakeMove(currentBoard, previousBoard, boardSize, x, y, 'B');
             if(!futureBoard.equals(currentBoard)) {
                 gameStateManager.addState(gameID, futureBoard, currentBoard, previousBoard);
@@ -114,6 +113,7 @@ public class UserController {
     }
     @RequestMapping(value = "/submit", method = RequestMethod.GET)
     public String Submit(Model model, @RequestParam("ID") int gameID){
+        GameStateManager gameStateManager = new GameStateManager();
         GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
         String currentBoard = gameState.getGrid();
         model.addAttribute("test",currPlayer[gameID]+"#"+ currentBoard);
