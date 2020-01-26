@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1cc336d-1ad8-42fb-8f10-fec0598a342a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/managers/GameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/managers/GameStateManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/model/GamesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/model/GamesstatesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/model/UsersEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/web/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/account_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/account_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_11_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_10_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.iml" beforeDir="false" afterPath="$PROJECT_DIR$/account.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/SecurityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/SecurityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/SecurityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/SecurityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/validator/UserValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/validator/UserValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hellokoding/account/web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hellokoding/account/web/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,12 +108,24 @@
       <workItem from="1579968547046" duration="75000" />
       <workItem from="1579983660908" duration="1345000" />
       <workItem from="1580030557132" duration="2427000" />
-      <workItem from="1580051168711" duration="16954000" />
+      <workItem from="1580051168711" duration="17398000" />
     </task>
+    <task id="LOCAL-00001" summary="hibernate">
+      <created>1580071695149</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580071695149</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="177" key="#Assign_Data_Sources" timestamp="1580059822018">
@@ -202,10 +168,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580071539122" />
-    <state x="385" y="113" key="CommitChangelistDialog2" timestamp="1580071637421">
+    <state x="385" y="113" key="CommitChangelistDialog2" timestamp="1580071693854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="385" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580071637421" />
+    <state x="385" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580071693854" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1579968613925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -234,6 +200,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="125" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580060675932" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1580071773260">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580071773260" />
     <state x="581" y="299" key="com.intellij.ide.util.TipDialog" timestamp="1580051527809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
