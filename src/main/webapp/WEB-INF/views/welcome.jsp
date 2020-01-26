@@ -39,20 +39,27 @@
 
 </div>
 <canvas id = "game-canvas" width="800" height="800"></canvas>
-${test} XDDDDDDD
 <script>
     var canvas = document.getElementById("game-canvas");
     var context = canvas.getContext("2d");
     var  username = "${pageContext.request.userPrincipal.name}";
     var gameID = "${message}"
-
+    var stones= new Array();
+    var player = "${c}";
     var boardSize = "${boardSize}";
     var border = canvas.width / 10;
     var boardWidth = canvas.width - (border * 2);
     var boardHeight = canvas.height - (border * 2);
     var cellWidth = boardWidth / (boardSize - 1);
     var cellHeight = boardHeight / (boardSize - 1);
-
+    var currPlayer = 0;
+    for(i = 0; i<boardSize; i++){
+        for(j = 0; j<boardSize; j++)
+        {
+            stones[i*boardSize+j]="N";
+        }
+    }
+   // alert(stones);
     var lastX;
     var lastY;
 
@@ -74,9 +81,14 @@ ${test} XDDDDDDD
                 context.fillRect(i * cellWidth + border, j * cellHeight + border, cellWidth - 1, cellHeight - 1);
             }
         }
+        for(i = 0; i<boardSize; i++){
+            for(j = 0; j<boardSize; j++)
+            {
+                if(stones[i*boardSize+j]=="W")placeStone(i*(cellWidth) + border, j*(cellWidth) + border, '#f8fffb');
+                if(stones[i*boardSize+j]=="B")placeStone(i*(cellWidth) + border, j*(cellWidth) + border, '#000000');
+            }
+        }
 
-        if(username=="kubcio")placeStone((cellWidth) + border, (cellWidth) + border, '#000000');
-        else placeStone((cellWidth) + border, (cellWidth) + border,'#f4fff0');
         var quater = Math.floor((boardSize - 1) / 4);
         var markerSize = 8;
         var markerMargin = (markerSize / 2) + 0.5;
@@ -108,7 +120,20 @@ ${test} XDDDDDDD
             context.fillText((String.fromCharCode(97 + i)), (border + (i * cellHeight) + (size / 3)) - (size / 1.5), canvas.height - (textSpacing * 2));
         }
     }
-
+    setInterval(function() {
+        $.ajax({
+            type: "GET",
+            url: "submit",
+            data: {ID: gameID},
+            success: function (result) {
+                var help = result.split("#");
+                currPlayer = help[0];
+                stones = help[1].split("");
+              //  alert(stones);
+                drawGrid();
+              //  alert(stones);
+            }
+    })},1000);
     canvas.addEventListener('mousemove', function(evt)
     {
         var position = getGridPoint(evt);
@@ -132,17 +157,20 @@ ${test} XDDDDDDD
         var position = getGridPoint(evt);
         var token = $("meta[name='_csrf']").attr("content");
         var header = $("meta[name='_csrf_header']").attr("content");
+        if(currPlayer != player)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
+        else {
+            $.ajax({
+                type: "POST",
+                url: "submit",
+                data: { x:  position.x, y: position.y, user: player, gameID: gameID}, // parameters
+                beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
+                },
+                success: function (result) {
 
-        $.ajax({
-            type: "POST",
-            url: "submit",
-            data: { x:  position.x, y: position.y, user: username, gameID: gameID}, // parameters
-            beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
-            },
-            success: function (result) {
-                alert(result);
-            }
-        });
+                }
+            });
+        }
+
         if ((position.x != lastX) || (position.y != lastY))
         {
             drawGrid();

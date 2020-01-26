@@ -16,8 +16,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Null;
+
 @Controller
 public class UserController {
+    public String[] xxx = new String[10000];
+    public int[] player = new int[10000];
+    public int[] currPlayer = new int[100000];
     @Autowired
     private UserService userService;
 
@@ -64,15 +69,18 @@ public class UserController {
         return "search";
     }
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String search(Model model, @RequestParam("board")String s, @RequestParam("size") int size){
+    public String search(Model model, @RequestParam("board")int s, @RequestParam("size") int size){
         model.addAttribute("boardSize", size);
+        model.addAttribute("c",player[s]);
+        player[s]++;
         return "redirect:/welcome?gameID="+s;
     }
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome(@RequestParam(name = "gameID") int gameID, @RequestParam(name="boardSize") int boardSize, Model model) {
+    public String welcome(@RequestParam(name = "gameID") int gameID, @RequestParam(name="boardSize") int boardSize, @RequestParam(name="c") int player, Model model) {
         model.addAttribute("message", gameID);
         model.addAttribute("boardSize", boardSize);
+        model.addAttribute("c",player);
         return "welcome";
     }
 
@@ -91,6 +99,8 @@ public class UserController {
             previousBoard = gameState.getLastMove();
             currentBoard = gameState.getGrid();
             boardSize = gameEntity.getBoardSize();
+            char player;
+            gameManager.getGame.
             String futureBoard = MoveValidation.MakeMove(currentBoard, previousBoard, boardSize, x, y, 'B');
             if(!futureBoard.equals(currentBoard)) {
                 gameStateManager.addState(gameID, futureBoard, currentBoard, previousBoard);
@@ -99,16 +109,16 @@ public class UserController {
         } catch (Exception e) {
             System.out.println(e);
         }
+
         return "data";
     }
     @RequestMapping(value = "/submit", method = RequestMethod.GET)
-    public String Submit(Model model){
-        model.addAttribute("test","122");
-
-        return "welcome";
+    public String Submit(Model model, @RequestParam("ID") int gameID){
+        GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
+        String currentBoard = gameState.getGrid();
+        model.addAttribute("test",currPlayer[gameID]+"#"+ currentBoard);
+        return "data";
     }
-
-
 
 
 }

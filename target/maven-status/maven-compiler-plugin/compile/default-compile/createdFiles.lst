@@ -1,6 +1,8 @@
 com\hellokoding\account\model\User.class
 com\hellokoding\account\repository\UserRepository.class
+com\hellokoding\account\GameLogic\Stone.class
 com\hellokoding\account\service\UserDetailsServiceImpl.class
+com\hellokoding\account\GameLogic\State.class
 com\hellokoding\account\web\UserController.class
 com\hellokoding\account\repository\RoleRepository.class
 com\hellokoding\account\validator\UserValidator.class
