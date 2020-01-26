@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d1cc336d-1ad8-42fb-8f10-fec0598a342a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/MoveValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hellokoding/account/GameLogic/MoveValidation.java" afterDir="false" />
     </list>
@@ -26,7 +25,6 @@
     <expand />
     <select />
   </component>
-
   <component name="ExecutionTargetDialog">
     <checked>
       <node key="c468ca51-7f0b-4a90-817b-874b3ce168bb" />
@@ -64,7 +62,6 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580064719197" />
@@ -122,149 +119,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="hibernate" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="552" y="177" key="#Assign_Data_Sources" timestamp="1580059822018">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="177" key="#Assign_Data_Sources/0.0.1920.1040@0.0.1920.1040" timestamp="1580059822018" />
-    <state x="552" y="177" key="#SQL_Dialects" timestamp="1580031880715">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="177" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1580031880715" />
-    <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580064698556">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580064698556" />
-    <state x="285" y="206" key="#com.intellij.ide.util.MemberChooser" timestamp="1580059670991">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="285" y="206" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580059670991" />
-    <state x="209" y="298" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1580060814914">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="209" y="298" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580060814914" />
-    <state x="827" y="306" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580064693641">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="827" y="306" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580064693641" />
-    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580030945242">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580030945242" />
-    <state x="324" y="487" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1580060578940">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="324" y="487" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1920.1040@0.0.1920.1040" timestamp="1580060578940" />
-    <state x="150" y="61" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1580068909004">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="150" y="61" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580068909004" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580071539122">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580071539122" />
-    <state x="385" y="113" key="CommitChangelistDialog2" timestamp="1580071693854">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="385" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580071693854" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1579968613925">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579968613925" />
-    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1580070570425">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580070570425" />
-    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1580070570425">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580070570425" />
-    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1580070570425">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580070570425" />
-    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1580070570425">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580070570425" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1580051631910">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1580051631910" />
-    <state x="125" y="155" key="SettingsEditor" timestamp="1580060675932">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="125" y="155" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580060675932" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1580071773260">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580071773260" />
-    <state x="581" y="299" key="com.intellij.ide.util.TipDialog" timestamp="1580051527809">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="465" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1579968571537" />
-    <state x="581" y="299" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580051527809" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1579984000652">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1579984000652" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1580060437803">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580060437803" />
-  </component>
-  <component name="simpleUML.UMLToolWindowPlugin">
-    <General>
-      <option name="birdViewUpdateDelay" value="2000" />
-      <option name="defaultFileLocation" value="file://$PROJECT_DIR$/.." />
-    </General>
-    <Classdiagram>
-      <option name="diagramTitleFont" value="SansSerif,1,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="defaultFieldsExpanded" value="false" />
-      <option name="defaultContructorsExpanded" value="false" />
-      <option name="defaultMethodsExpanded" value="false" />
-      <option name="showParameters" value="true" />
-      <option name="showTooltip" value="true" />
-      <option name="showReturnValues" value="true" />
-      <option name="longModifier" value="true" />
-      <option name="implementsBehaviour" value="1" />
-      <option name="extendsBehaviour" value="1" />
-      <option name="compartmentBehaviour" value="1" />
-      <option name="interfaceBackgroundColor" value="-6494306" />
-      <option name="abstractClassBackgroundColor" value="-1580132" />
-      <option name="classBackgroundColor" value="-6508057" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="quickSourceLinkColor" value="-16776961" />
-      <option name="quickDiagramLinkColor" value="-8454144" />
-      <option name="drawDecorations" value="false" />
-      <option name="hideFieldList" value="" />
-      <option name="showFieldList" value="" />
-      <option name="hideConstructorList" value="" />
-      <option name="showConstructorList" value="" />
-      <option name="hideMethodList" value="" />
-      <option name="showMethodList" value="" />
-      <option name="minimumFigureSize" value="0,0" />
-    </Classdiagram>
-    <Dependencydiagram>
-      <option name="diagramTitleFont" value="SansSerif,1,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="packageNameCompressionLevel" value="0" />
-    </Dependencydiagram>
-    <Packagediagram>
-      <option name="diagramTitleFont" value="SansSerif,0,12" />
-      <option name="diagramFont" value="SansSerif,0,10" />
-      <option name="packageBackgroundColor" value="-4144960" />
-      <option name="diagramBackgroundColor" value="-1" />
-      <option name="useAntialiasedConnectors" value="true" />
-      <option name="packageNameCompressionLevel" value="2" />
-    </Packagediagram>
     <MESSAGE value="Kubcio ROZPIERDALA" />
     <MESSAGE value="Kubcio ROZPIERDALA &#10;dodano boardSize do gry" />
     <MESSAGE value="dodanie pseudo logiki gry" />
