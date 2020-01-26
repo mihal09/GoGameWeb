@@ -128,7 +128,8 @@
             success: function (result) {
                 var help = result.split("#");
                 currPlayer = help[0];
-                stones = help[1].split(" ");
+                stones = help[1].split("");
+              //  alert(stones);
                 drawGrid();
               //  alert(stones);
             }

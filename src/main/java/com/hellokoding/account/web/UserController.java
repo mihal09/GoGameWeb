@@ -87,8 +87,8 @@ public class UserController {
         {
             for(int j = 0; j<13; j++)
             {
-                if(i==x && j==y)xxx[gameID]+=(name==0? "B " : "W ");
-                else xxx[gameID]+="N ";
+                if(i==x && j==y)xxx[gameID]+=(name==0? "B" : "W");
+                else xxx[gameID]+="N";
             }
         }
         if(name==0)currPlayer[gameID]=1;
