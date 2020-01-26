@@ -43,8 +43,9 @@
     var canvas = document.getElementById("game-canvas");
     var context = canvas.getContext("2d");
     var  username = "${pageContext.request.userPrincipal.name}";
-    var gameID = "${message}";
-    var boardSize = 19;
+    var gameID = "${message}"
+
+    var boardSize = "${boardSize}";
     var border = canvas.width / 10;
     var boardWidth = canvas.width - (border * 2);
     var boardHeight = canvas.height - (border * 2);

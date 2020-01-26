@@ -44,8 +44,9 @@
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
-            <input name="board" type="text" class="form-control" placeholder="Board size"
+            <input name="board" type="text" class="form-control" placeholder="gameID"
                    autofocus="true"/>
+            <input name="size" type="text" class="form-control" placeholder="board size"/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Search game</button>

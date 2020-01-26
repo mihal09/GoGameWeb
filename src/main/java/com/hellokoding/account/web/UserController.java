@@ -55,19 +55,19 @@ public class UserController {
         return "login";
     }
     @RequestMapping(value = {"/","/search"}, method = RequestMethod.GET)
-    public String search(Model model) {
-        model.addAttribute("userForm", new User());
-
+    public String search(){
         return "search";
     }
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String search(@RequestParam("board")String s){
+    public String search(Model model, @RequestParam("board")String s, @RequestParam("size") int size){
+        model.addAttribute("boardSize", size);
         return "redirect:/welcome?gameID="+s;
     }
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome(@RequestParam(name = "gameID") int gameID,  Model model) {
+    public String welcome(@RequestParam(name = "gameID") int gameID, @RequestParam(name="boardSize") int boardSize, Model model) {
         model.addAttribute("message", gameID);
+        model.addAttribute("boardSize", boardSize);
         return "welcome";
     }
 
