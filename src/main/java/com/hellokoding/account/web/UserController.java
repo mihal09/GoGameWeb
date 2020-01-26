@@ -5,13 +5,11 @@ import com.hellokoding.account.service.SecurityService;
 import com.hellokoding.account.service.UserService;
 import com.hellokoding.account.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -43,7 +41,7 @@ public class UserController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/search";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -56,10 +54,29 @@ public class UserController {
 
         return "login";
     }
+    @RequestMapping(value = {"/","/search"}, method = RequestMethod.GET)
+    public String search(Model model) {
+        model.addAttribute("userForm", new User());
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+        return "search";
+    }
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public String search(@RequestParam("board")String s){
+        return "redirect:/welcome?gameID="+s;
+    }
+
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String welcome(@RequestParam(name = "gameID") int gameID,  Model model) {
         model.addAttribute("message", gameID);
         return "welcome";
     }
+
+    @RequestMapping(value = "/submit", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    public String Submit(@RequestParam("x") int x, @RequestParam("y") int y, @RequestParam("user") String name, @RequestParam("gameID") int gameID){
+        System.out.println(name);
+        return "welcome";
+    }
+
+
+
 }
