@@ -3,7 +3,7 @@ package com.hellokoding.account.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "games", schema = "webgo")
+@Table(name = "games", schema = "accounts")
 public class GamesEntity {
     private int id;
     private Integer boardSize;

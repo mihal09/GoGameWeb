@@ -34,7 +34,7 @@ public class GameManager {
         Session session = HibernateUtil.getSessionFactory().openSession();
         GamesEntity game = null;
         try {
-            game = session.get(GamesEntity.class, id);
+            game = (GamesEntity) session.get(GamesEntity.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

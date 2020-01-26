@@ -15,7 +15,7 @@ class Grid {
     private int deleted_row;
     private int how_many_did_i_delete;
     private boolean[][] count_ter;
-    private Grid previousGrid;
+    private Grid previousGrid = null;
     Grid(int size) {
         previousGrid = null;
         SIZE = size;
@@ -28,16 +28,6 @@ class Grid {
     public void setPreviousGrid(Grid previousGrid){
         this.previousGrid = previousGrid;
     }
-    public boolean equals(Grid grid){
-        for(int i=0; i < SIZE; i++){
-            for(int j=0; j< SIZE; j++){
-                if(!stones[i][j].state.equals(grid.getStones()[i][j].state))
-                    return false;
-            }
-        }
-        return true;
-    }
-
 
     void addStone(int row, int col, State state) {
         how_many_did_i_delete = 0;
@@ -93,7 +83,7 @@ class Grid {
         odw = new boolean[SIZE][SIZE];
         if(isOccupied(row,col))return false;
 //        if(row==deleted_row && col == deleted_col && how_many_did_i_delete == 1)return false;
-        if(previousGrid.equals(this))
+        if(this.toString().equals(previousGrid.toString()))
             return false;
         Stone helper = new Stone(row,col,state);
         stones[row][col] = helper;
@@ -253,7 +243,10 @@ class Grid {
         String result = "";
         for(int i=0; i < SIZE; i++){
             for(int j=0; j< SIZE; j++){
-                result += stones[i][j] + " ";
+                if(stones[i][j] == null)
+                    result += "N";
+                else
+                    result += stones[i][j];
             }
         }
         return result;

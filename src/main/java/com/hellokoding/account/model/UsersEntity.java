@@ -3,7 +3,7 @@ package com.hellokoding.account.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users", schema = "webgo")
+@Table(name = "users", schema = "accounts")
 public class UsersEntity {
     private int id;
     private String username;

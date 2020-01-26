@@ -27,7 +27,7 @@ public class HibernateUtil {
                 Properties properties = new Properties();
 
                 properties.put("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-                properties.put("hibernate.connection.url", "jdbc:mysql://localhost:3306/webgo?serverTimezone=UTC&useSSL=false");
+                properties.put("hibernate.connection.url", "jdbc:mysql://localhost:3306/accounts?serverTimezone=UTC&useSSL=false");
                 properties.put("hibernate.connection.username", "root");
                 properties.put("hibernate.connection.password", "haslo1");
                 properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");

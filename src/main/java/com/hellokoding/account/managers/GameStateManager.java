@@ -3,6 +3,7 @@ package com.hellokoding.account.managers;
 import com.hellokoding.account.HibernateUtil;
 import com.hellokoding.account.model.GamesstatesEntity;
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -19,8 +20,13 @@ public class GameStateManager {
 
         /* Add few employee records in database */
         ME.addState(1, "aaa", "aabba","bbb");
-         ME.addState(1, "ccc", "aaa","bbb");
+        ME.addState(1, "ccc", "aaa","bbb");
         ME.addState(2, "Pasd", "kkkk","asaff");
+
+        GamesstatesEntity g = ME.getLastGameState(1);
+        System.out.println(g.getId());
+
+        ME.deleteGameState(2);
 
         /* List down all the employees */
         // ME.listEmployees();
@@ -102,16 +108,17 @@ public class GameStateManager {
     }*/
 
     /* Method to DELETE an employee from the records */
-    public void deleteEmployee(Integer GameID){
+    public void deleteGameState(Integer gameID){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
-            List<GamesstatesEntity> states = (List<GamesstatesEntity>) session.createCriteria(GamesstatesEntity.class).list();
+
+            List<GamesstatesEntity> states = (List<GamesstatesEntity>) session.createSQLQuery("select * from gamesstates").addEntity(GamesstatesEntity.class).list();
             for (Iterator iterator = states.iterator(); iterator.hasNext();){
                 GamesstatesEntity state = (GamesstatesEntity) iterator.next();
-                if(state.getGameId() == GameID) session.delete(state);
+                if(state.getGameId() == gameID) session.delete(state);
             }
             tx.commit();
         } catch (HibernateException e) {
@@ -127,7 +134,9 @@ public class GameStateManager {
         List<GamesstatesEntity> states = null;
 
         try{
-            states = (List<GamesstatesEntity>) session.createCriteria(GamesstatesEntity.class).list();
+            SQLQuery sqlQuery = session.createSQLQuery("SELECT * FROM gamesstates WHERE gameID = :param");
+            sqlQuery.setParameter("param",id);
+            states = (List<GamesstatesEntity>) sqlQuery.addEntity(GamesstatesEntity.class).list();
         }catch (HibernateException e){
             e.printStackTrace();
         } finally {
@@ -136,6 +145,6 @@ public class GameStateManager {
 
         HibernateUtil.shutdown();
 
-        return states.get(-1);
+        return states.get(states.size() - 1);
     }
 }
