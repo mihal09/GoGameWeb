@@ -20,16 +20,12 @@ public class MoveValidation {
         return grid;
     }
     public static boolean IsMoveValid(Grid grid, int x, int y, State playerToMove){
-        if(grid.isSafe(x,y,playerToMove)){
-            return true;
-        }
-        else{
-            return false;
-        }
-
+       return grid.isSafe(x,y,playerToMove);
     }
-    public static String MakeMove(String boardState, int boardSize, int x, int y, char color) {
+    public static String MakeMove(String boardState, String previousBoardState, int boardSize, int x, int y, char color) {
         Grid grid = makeGrid(boardState, boardSize);
+        Grid previousGrid = makeGrid(previousBoardState, boardSize);
+        grid.setPreviousGrid(previousGrid);
         State playerToMove;
         switch (color) {
             case 'W':
@@ -43,6 +39,6 @@ public class MoveValidation {
             grid.addStone(x, y, playerToMove);
             return grid.toString();
         }
-        return boardState;
+        return null;
     }
 }
