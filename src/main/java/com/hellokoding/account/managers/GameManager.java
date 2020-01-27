@@ -2,9 +2,13 @@ package com.hellokoding.account.managers;
 
 import com.hellokoding.account.HibernateUtil;
 import com.hellokoding.account.model.GamesEntity;
+import com.hellokoding.account.model.GamesstatesEntity;
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class GameManager {
 
@@ -22,7 +26,6 @@ public class GameManager {
             game.setIdPlayerTwo(idPlayerTwo);
             session.save(game);
             session.flush();
-            session.refresh(game);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -49,6 +52,28 @@ public class GameManager {
             }
         }
         return game;
+    }
+
+    synchronized public GamesEntity getLastGame(){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<GamesEntity> games = null;
+
+        try{
+            SQLQuery sqlQuery = session.createSQLQuery("SELECT * FROM games");
+            games = (List<GamesEntity>) sqlQuery.addEntity(GamesEntity.class).list();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        HibernateUtil.shutdown();
+        try {
+            return games.get(games.size() - 1);
+        }
+        catch (Exception e){
+            return null;
+        }
     }
 
 

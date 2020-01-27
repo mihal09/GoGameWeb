@@ -80,8 +80,8 @@ public class UserController {
     @RequestMapping(value = "/createGame", method = RequestMethod.POST)
     public String createGame(Model model, @RequestParam("size") int size, @RequestParam("player1Id") int player1Id, @RequestParam("player2Id") int player2Id){
         GameManager gameManager = new GameManager();
-        int gameId = gameManager.addGame(size, player1Id, player2Id);
-        System.out.println(gameId);
+        gameManager.addGame(size, player1Id, player2Id);
+        int gameId = gameManager.getLastGame().getId();
         model.addAttribute("gameID", gameId);
         return "search";
     }
@@ -98,6 +98,7 @@ public class UserController {
         model.addAttribute("test","121");
         String previousBoard= "";
         String currentBoard = "";
+        String playerToMove = "B";
         int boardSize = 0;
 
         synchronized (this){
@@ -108,8 +109,13 @@ public class UserController {
             GamesEntity gameEntity = gameManager.getGame(gameID);
             UsersEntity user = playerManager.getPlayer(name);
             int userId = user.getId();
-            previousBoard = gameState.getLastMove();
-            currentBoard = gameState.getGrid();
+            if(gameEntity == null)
+                return "data";
+            if(gameState!=null) {
+                previousBoard = gameState.getLastMove();
+                currentBoard = gameState.getGrid();
+                playerToMove = gameState.getNextMove();
+            }
             boardSize = gameEntity.getBoardSize();
             char player;
             if(userId == gameEntity.getIdPlayerOne())
@@ -118,7 +124,7 @@ public class UserController {
                 player = 'W';
             else
                 return "data";
-            String playerToMove = gameState.getNextMove();
+
             if(playerToMove.charAt(0) != player) {
                 return "data";
             }
@@ -138,8 +144,13 @@ public class UserController {
     public String Submit(Model model, @RequestParam("ID") int gameID){
         GameStateManager gameStateManager = new GameStateManager();
         GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
-        String currentBoard = gameState.getGrid();
-        System.out.println(gameState.getId() + " - "+currentBoard);
+        String currentBoard;
+        if(gameState != null) {
+            currentBoard = gameState.getGrid();
+        }
+        else {
+            currentBoard = "";
+        }
         model.addAttribute("test",0+"#"+ currentBoard);
         return "data";
     }

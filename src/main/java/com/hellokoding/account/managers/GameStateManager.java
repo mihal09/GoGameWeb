@@ -74,7 +74,11 @@ public class GameStateManager {
         }
 
         HibernateUtil.shutdown();
-
-        return states.get(states.size() - 1);
+        try {
+            return states.get(states.size() - 1);
+        }
+        catch (Exception e){
+            return null;
+        }
     }
 }

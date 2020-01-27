@@ -56,9 +56,11 @@
 </br></br></br></br></br>
 
     <script>
+        let gameID = ${gameID};
+        if(gameID != null){
         alert("Your game id is ${gameID}");
+        }
     </script>
-
 
 
     <form method="POST" action="${contextPath}/createGame">
@@ -70,7 +72,7 @@
             <input name="player1Id" type="text" class="form-control" placeholder="Black playerId"/>
             <input name="player2Id" type="text" class="form-control" placeholder="White playerId"/>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Search game</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Create game</button>
         </div>
 
     </form>
