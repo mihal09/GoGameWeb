@@ -23,9 +23,7 @@ import javax.validation.constraints.Null;
 
 @Controller
 public class UserController {
-    public String[] xxx = new String[10000];
     public int[] player = new int[10000];
-    public int[] currPlayer = new int[100000];
     @Autowired
     private UserService userService;
 
@@ -77,6 +75,15 @@ public class UserController {
         model.addAttribute("c",player[s]);
         player[s]++;
         return "redirect:/welcome?gameID="+s;
+    }
+
+    @RequestMapping(value = "/createGame", method = RequestMethod.POST)
+    public String createGame(Model model, @RequestParam("size") int size, @RequestParam("player1Id") int player1Id, @RequestParam("player2Id") int player2Id){
+        GameManager gameManager = new GameManager();
+        int gameId = gameManager.addGame(size, player1Id, player2Id);
+        System.out.println(gameId);
+        model.addAttribute("gameID", gameId);
+        return "search";
     }
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)

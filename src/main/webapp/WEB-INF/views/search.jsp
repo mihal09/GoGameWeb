@@ -53,6 +53,27 @@
         </div>
 
     </form>
+</br></br></br></br></br>
+
+    <script>
+        alert("Your game id is ${gameID}");
+    </script>
+
+
+
+    <form method="POST" action="${contextPath}/createGame">
+        <h2 class="form-heading">Create Game</h2>
+
+        <div class="form-group ${error != null ? 'has-error' : ''}">
+            <span>${message}</span>
+            <input name="size" type="text" class="form-control" placeholder="board size"/>
+            <input name="player1Id" type="text" class="form-control" placeholder="Black playerId"/>
+            <input name="player2Id" type="text" class="form-control" placeholder="White playerId"/>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Search game</button>
+        </div>
+
+    </form>
 
 </div>
 <!-- /container -->

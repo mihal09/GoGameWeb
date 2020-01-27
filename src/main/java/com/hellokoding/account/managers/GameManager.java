@@ -8,17 +8,21 @@ import org.hibernate.Transaction;
 
 public class GameManager {
 
-    public void addGame(int boardSize,int idPlayerOne, int idPlayerTwo){
+    public int addGame(int boardSize,int idPlayerOne, int idPlayerTwo){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
+        GamesEntity game = null;
+        int gameId = -1;
 
         try {
             tx = session.beginTransaction();
-            GamesEntity game = new GamesEntity();
+            game = new GamesEntity();
             game.setBoardSize(boardSize);
             game.setIdPlayerOne(idPlayerOne);
             game.setIdPlayerTwo(idPlayerTwo);
             session.save(game);
+            session.flush();
+            session.refresh(game);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -28,6 +32,8 @@ public class GameManager {
         }
 
         HibernateUtil.shutdown();
+        gameId = game.getId();
+        return gameId;
     }
 
     public GamesEntity getGame(int id) {
