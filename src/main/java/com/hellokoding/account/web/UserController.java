@@ -70,16 +70,23 @@ public class UserController {
         return "search";
     }
     @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String search(Model model, @RequestParam("board")int s, @RequestParam("size") int size){
-        model.addAttribute("boardSize", size);
-        model.addAttribute("c",player[s]);
-        player[s]++;
-        return "redirect:/welcome?gameID="+s;
+    public String search(Model model, @RequestParam("board")int boardId){
+        GameManager gameManager = new GameManager();
+        GamesEntity game = gameManager.getGame(boardId);
+        if(game!=null) {
+            int size = game.getBoardSize();
+            model.addAttribute("boardSize", size);
+            return "redirect:/welcome?gameID=" + boardId;
+        }
+        return "redirect:/welcome";
     }
 
     @RequestMapping(value = "/createGame", method = RequestMethod.POST)
-    public String createGame(Model model, @RequestParam("size") int size, @RequestParam("player1Id") int player1Id, @RequestParam("player2Id") int player2Id){
+    public String createGame(Model model, @RequestParam("size") int size, @RequestParam("player1Name") String player1Name, @RequestParam("player2Name") String player2Name){
         GameManager gameManager = new GameManager();
+        PlayerManager playerManager = new PlayerManager();
+        int player1Id = playerManager.getPlayer(player1Name).getId();
+        int player2Id = playerManager.getPlayer(player2Name).getId();
         gameManager.addGame(size, player1Id, player2Id);
         int gameId = gameManager.getLastGame().getId();
         model.addAttribute("gameID", gameId);

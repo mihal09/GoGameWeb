@@ -46,7 +46,6 @@
             <span>${message}</span>
             <input name="board" type="text" class="form-control" placeholder="gameID"
                    autofocus="true"/>
-            <input name="size" type="text" class="form-control" placeholder="board size"/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Search game</button>
@@ -69,8 +68,8 @@
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
             <input name="size" type="text" class="form-control" placeholder="board size"/>
-            <input name="player1Id" type="text" class="form-control" placeholder="Black playerId"/>
-            <input name="player2Id" type="text" class="form-control" placeholder="White playerId"/>
+            <input name="player1Name" type="text" class="form-control" placeholder="Black player name"/>
+            <input name="player2Name" type="text" class="form-control" placeholder="White player name"/>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Create game</button>
         </div>
