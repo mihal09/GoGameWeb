@@ -12,37 +12,32 @@ import java.util.List;
 
 public class GameStateManager {
 
-
-    public static void main(String[] args) {
-
-
-        GameStateManager ME = new GameStateManager();
-
-        /* Add few employee records in database */
-        ME.addState(1, "aaa", "aabba","bbb");
-        ME.addState(1, "ccc", "aaa","bbb");
-        ME.addState(2, "Pasd", "kkkk","asaff");
-
-        GamesstatesEntity g = ME.getLastGameState(1);
-        System.out.println(g.getId());
-
-        ME.deleteGameState(2);
-
-        /* List down all the employees */
-        // ME.listEmployees();
-
-        /* Update employee's records */
-        //  ME.updateEmployee(empID1, 5000);
-
-        /* Delete an employee from the database */
-        // ME.deleteEmployee(empID2);
-
-        /* List down new list of the employees */
-        // ME.listEmployees();
-    }
+//
+//    public static void main(String[] args) {
+//
+//
+//        GameStateManager ME = new GameStateManager();
+//
+//        /* Add few employee records in database */
+//        ME.addState(1, "aaa", "aabba","bbb","B");
+//         ME.addState(1, "ccc", "aaa","bbb","B");
+//        ME.addState(2, "Pasd", "kkkk","asaff","B");
+//
+//        /* List down all the employees */
+//        // ME.listEmployees();
+//
+//        /* Update employee's records */
+//        //  ME.updateEmployee(empID1, 5000);
+//
+//        /* Delete an employee from the database */
+//        // ME.deleteEmployee(empID2);
+//
+//        /* List down new list of the employees */
+//        // ME.listEmployees();
+//    }
 
     /* Method to CREATE an employee in the database */
-    public void addState(int gameID,String grid, String lastMove, String penultimateMove){
+    public void addState(int gameID,String grid, String lastMove, String penultimateMove, String nextMove){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
 
@@ -53,6 +48,7 @@ public class GameStateManager {
             state.setGrid(grid);
             state.setLastMove(lastMove);
             state.setPenultimateMove(penultimateMove);
+            state.setNextMove(nextMove);
             session.save(state);
             tx.commit();
         } catch (HibernateException e) {
@@ -108,17 +104,16 @@ public class GameStateManager {
     }*/
 
     /* Method to DELETE an employee from the records */
-    public void deleteGameState(Integer gameID){
+    public void deleteEmployee(Integer GameID){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
-
-            List<GamesstatesEntity> states = (List<GamesstatesEntity>) session.createSQLQuery("select * from gamesstates").addEntity(GamesstatesEntity.class).list();
+            List<GamesstatesEntity> states = (List<GamesstatesEntity>) session.createCriteria(GamesstatesEntity.class).list();
             for (Iterator iterator = states.iterator(); iterator.hasNext();){
                 GamesstatesEntity state = (GamesstatesEntity) iterator.next();
-                if(state.getGameId() == gameID) session.delete(state);
+                if(state.getGameId() == GameID) session.delete(state);
             }
             tx.commit();
         } catch (HibernateException e) {
@@ -129,7 +124,8 @@ public class GameStateManager {
         }
     }
 
-    public GamesstatesEntity getLastGameState(int id){
+
+    synchronized public GamesstatesEntity getLastGameState(int id){
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<GamesstatesEntity> states = null;
 

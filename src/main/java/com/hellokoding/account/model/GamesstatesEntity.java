@@ -10,6 +10,7 @@ public class GamesstatesEntity {
     private String grid;
     private String lastMove;
     private String penultimateMove;
+    private String nextMove;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -61,6 +62,16 @@ public class GamesstatesEntity {
         this.penultimateMove = penultimateMove;
     }
 
+    @Basic
+    @Column(name = "nextMove", nullable = true, length = 1)
+    public String getNextMove() {
+        return nextMove;
+    }
+
+    public void setNextMove(String nextMove) {
+        this.nextMove = nextMove;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,7 +83,8 @@ public class GamesstatesEntity {
         if (gameId != null ? !gameId.equals(that.gameId) : that.gameId != null) return false;
         if (grid != null ? !grid.equals(that.grid) : that.grid != null) return false;
         if (lastMove != null ? !lastMove.equals(that.lastMove) : that.lastMove != null) return false;
-        if (penultimateMove != null ? !penultimateMove.equals(that.penultimateMove) : that.penultimateMove != null)
+        if (penultimateMove != null ? !penultimateMove.equals(that.penultimateMove) : that.penultimateMove != null);
+        if (nextMove != null ? !nextMove.equals(that.nextMove) : that.nextMove != null)
             return false;
 
         return true;
@@ -85,6 +97,9 @@ public class GamesstatesEntity {
         result = 31 * result + (grid != null ? grid.hashCode() : 0);
         result = 31 * result + (lastMove != null ? lastMove.hashCode() : 0);
         result = 31 * result + (penultimateMove != null ? penultimateMove.hashCode() : 0);
+        result = 31 * result + (nextMove != null ? nextMove.hashCode() : 0);
         return result;
     }
+
+
 }

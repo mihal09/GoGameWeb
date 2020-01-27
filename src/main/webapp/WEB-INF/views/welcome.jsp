@@ -133,7 +133,7 @@
                 drawGrid();
               //  alert(stones);
             }
-    })},1000);
+    })},2000);
     canvas.addEventListener('mousemove', function(evt)
     {
         var position = getGridPoint(evt);
@@ -157,12 +157,13 @@
         var position = getGridPoint(evt);
         var token = $("meta[name='_csrf']").attr("content");
         var header = $("meta[name='_csrf_header']").attr("content");
-        if(currPlayer != player)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
+       // if(currPlayer != player)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
+        if(0 == 1)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
         else {
             $.ajax({
                 type: "POST",
                 url: "submit",
-                data: { x:  position.x, y: position.y, user: player, gameID: gameID}, // parameters
+                data: { x:  position.x, y: position.y, user: username, gameID: gameID}, // parameters
                 beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
                 },
                 success: function (result) {

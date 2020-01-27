@@ -83,8 +83,34 @@ class Grid {
         odw = new boolean[SIZE][SIZE];
         if(isOccupied(row,col))return false;
 //        if(row==deleted_row && col == deleted_col && how_many_did_i_delete == 1)return false;
+
+        Stone[][] stonesCopy = new Stone[SIZE][SIZE];
+        for(int i=0; i < SIZE; i++){
+            for(int j=0; j < SIZE; j++){
+                if(stones[i][j]==null)
+                    stonesCopy[i][j] = null;
+                else
+                    stonesCopy[i][j] = new Stone(i,j,stones[i][j].state);
+            }
+        }
+
+        addStone(row, col, state);
+        Boolean isKo = false;
         if(this.toString().equals(previousGrid.toString()))
+            isKo = true;
+
+        for(int i=0; i < SIZE; i++){
+            for(int j=0; j < SIZE; j++){
+                if(stonesCopy[i][j]==null)
+                    stones[i][j] = null;
+                else
+                    stones[i][j] = new Stone(i,j,stonesCopy[i][j].state);
+            }
+        }
+        if(isKo)
             return false;
+
+        stones[row][col] = null;
         Stone helper = new Stone(row,col,state);
         stones[row][col] = helper;
         if(!checkDFS(helper)){

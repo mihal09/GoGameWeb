@@ -3,11 +3,14 @@ package com.hellokoding.account.web;
 import com.hellokoding.account.GameLogic.MoveValidation;
 import com.hellokoding.account.managers.GameManager;
 import com.hellokoding.account.managers.GameStateManager;
+import com.hellokoding.account.managers.PlayerManager;
 import com.hellokoding.account.model.GamesEntity;
 import com.hellokoding.account.model.GamesstatesEntity;
 import com.hellokoding.account.model.User;
+import com.hellokoding.account.model.UsersEntity;
 import com.hellokoding.account.service.SecurityService;
 import com.hellokoding.account.service.UserService;
+import com.hellokoding.account.service.UserServiceImpl;
 import com.hellokoding.account.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -77,10 +80,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome(@RequestParam(name = "gameID") int gameID, @RequestParam(name="boardSize") int boardSize, @RequestParam(name="c") int player, Model model) {
+    public String welcome(@RequestParam(name = "gameID") int gameID, @RequestParam(name="boardSize") int boardSize, Model model) {
         model.addAttribute("message", gameID);
         model.addAttribute("boardSize", boardSize);
-        model.addAttribute("c",player);
         return "welcome";
     }
 
@@ -91,22 +93,36 @@ public class UserController {
         String currentBoard = "";
         int boardSize = 0;
 
-        try {
+        synchronized (this){
             GameStateManager gameStateManager = new GameStateManager();
             GameManager gameManager = new GameManager();
+            PlayerManager playerManager = new PlayerManager();
             GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
             GamesEntity gameEntity = gameManager.getGame(gameID);
+            UsersEntity user = playerManager.getPlayer(name);
+            int userId = user.getId();
             previousBoard = gameState.getLastMove();
             currentBoard = gameState.getGrid();
             boardSize = gameEntity.getBoardSize();
             char player;
-            String futureBoard = MoveValidation.MakeMove(currentBoard, previousBoard, boardSize, x, y, 'B');
-            if(!futureBoard.equals(currentBoard)) {
-                gameStateManager.addState(gameID, futureBoard, currentBoard, previousBoard);
+            if(userId == gameEntity.getIdPlayerOne())
+                player = 'B';
+            else if(userId == gameEntity.getIdPlayerTwo())
+                player = 'W';
+            else
+                return "data";
+            String playerToMove = gameState.getNextMove();
+            if(playerToMove.charAt(0) != player) {
+                return "data";
+            }
+            String futureBoard = MoveValidation.MakeMove(currentBoard, previousBoard, boardSize, x, y, player);
+            if(!currentBoard.equals(futureBoard)) {
+                if(playerToMove.equals("B"))
+                    playerToMove = "W";
+                else playerToMove = "B";
+                gameStateManager.addState(gameID, futureBoard, currentBoard, previousBoard, playerToMove);
                 System.out.println("SIEMANO");
             }
-        } catch (Exception e) {
-            System.out.println(e);
         }
 
         return "data";
@@ -116,7 +132,8 @@ public class UserController {
         GameStateManager gameStateManager = new GameStateManager();
         GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
         String currentBoard = gameState.getGrid();
-        model.addAttribute("test",currPlayer[gameID]+"#"+ currentBoard);
+        System.out.println(gameState.getId() + " - "+currentBoard);
+        model.addAttribute("test",0+"#"+ currentBoard);
         return "data";
     }
 

@@ -41,8 +41,7 @@ public class MoveValidation {
         }
         if (IsMoveValid(grid, x, y, playerToMove)) {
             grid.addStone(x, y, playerToMove);
-            return grid.toString();
         }
-        return null;
+        return grid.toString();
     }
 }
