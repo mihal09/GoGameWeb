@@ -151,7 +151,7 @@
     setInterval(function() {
         $.ajax({
             type: "GET",
-            url: "submit",
+            url: "getBoard",
             data: {ID: gameID},
             success: function (result) {
                 var help = result.split("#");
@@ -187,7 +187,7 @@
         var header = $("meta[name='_csrf_header']").attr("content");
             $.ajax({
                 type: "POST",
-                url: "submit",
+                url: "makeMove",
                 data: { x:  position.x, y: position.y, user: username, gameID: gameID}, // parameters
                 beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
                 }

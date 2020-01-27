@@ -23,7 +23,6 @@ import javax.validation.constraints.Null;
 
 @Controller
 public class UserController {
-    public int[] player = new int[10000];
     @Autowired
     private UserService userService;
 
@@ -36,7 +35,6 @@ public class UserController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
         return "registration";
     }
 
@@ -69,6 +67,7 @@ public class UserController {
     public String search(){
         return "search";
     }
+
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String search(Model model, @RequestParam("board")int boardId){
         GameManager gameManager = new GameManager();
@@ -100,7 +99,7 @@ public class UserController {
         return "welcome";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/makeMove", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     public String Submit(Model model, @RequestParam("x") int x, @RequestParam("y") int y, @RequestParam("user") String name, @RequestParam("gameID") int gameID){
         model.addAttribute("test","121");
         String previousBoard= "";
@@ -160,8 +159,8 @@ public class UserController {
         return "";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.GET)
-    public String Submit(Model model, @RequestParam("ID") int gameID){
+    @RequestMapping(value = "/getBoard", method = RequestMethod.GET)
+    public String GetBoard(Model model, @RequestParam("ID") int gameID){
         GameStateManager gameStateManager = new GameStateManager();
         GamesstatesEntity gameState = gameStateManager.getLastGameState(gameID);
         String currentBoard;
