@@ -26,6 +26,24 @@
     <![endif]-->
 </head>
 <body>
+
+<script>
+    function revertMove(){
+        var token = $("meta[name='_csrf']").attr("content");
+        var header = $("meta[name='_csrf_header']").attr("content");
+        $.ajax({
+            type: "POST",
+            url: "revert",
+            data: {gameID: gameID}, // parameters
+            beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
+            },
+            success: function (result) {
+
+            }
+        });
+    }
+
+</script>
 <div class="container">
 
     <c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -38,6 +56,16 @@
     </c:if>
 
 </div>
+</body>
+<br>
+<div class="container">
+    <h2>
+        <button onclick="revertMove()">Revert move</button>
+    </h2>
+</div>>
+</body>
+
+
 <canvas id = "game-canvas" width="800" height="800"></canvas>
 <script>
     var canvas = document.getElementById("game-canvas");
@@ -157,20 +185,13 @@
         var position = getGridPoint(evt);
         var token = $("meta[name='_csrf']").attr("content");
         var header = $("meta[name='_csrf_header']").attr("content");
-       // if(currPlayer != player)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
-        if(0 == 1)alert("NIE TWÓJ RUCH KURWO JEBANA W DUPE");
-        else {
             $.ajax({
                 type: "POST",
                 url: "submit",
                 data: { x:  position.x, y: position.y, user: username, gameID: gameID}, // parameters
                 beforeSend: function (xhr) { xhr.setRequestHeader(header,token);
-                },
-                success: function (result) {
-
                 }
             });
-        }
 
         if ((position.x != lastX) || (position.y != lastY))
         {

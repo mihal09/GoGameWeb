@@ -147,6 +147,19 @@ public class UserController {
 
         return "data";
     }
+
+
+    @RequestMapping(value = "/revert", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+    public String Submit(@RequestParam(value = "gameID", required = false) Integer gameID){
+        if(gameID != null) {
+            System.out.println(gameID);
+            GameStateManager gameStateManager = new GameStateManager();
+            Boolean success = gameStateManager.deleteLastState(gameID);
+            System.out.println("SUCCESS: "+success);
+        }
+        return "";
+    }
+
     @RequestMapping(value = "/submit", method = RequestMethod.GET)
     public String Submit(Model model, @RequestParam("ID") int gameID){
         GameStateManager gameStateManager = new GameStateManager();

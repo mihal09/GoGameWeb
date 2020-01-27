@@ -37,18 +37,18 @@ public class GameStateManager {
         HibernateUtil.shutdown();
     }
 
-    /* Method to DELETE an employee from the records */
-    public void deleteEmployee(Integer GameID){
+    public boolean deleteLastState(Integer gameID){
         Session session = HibernateUtil.getSessionFactory().openSession();
+        List<GamesstatesEntity> states = null;
         Transaction tx = null;
 
         try {
             tx = session.beginTransaction();
-            List<GamesstatesEntity> states = (List<GamesstatesEntity>) session.createCriteria(GamesstatesEntity.class).list();
-            for (Iterator iterator = states.iterator(); iterator.hasNext();){
-                GamesstatesEntity state = (GamesstatesEntity) iterator.next();
-                if(state.getGameId() == GameID) session.delete(state);
-            }
+            SQLQuery sqlQuery = session.createSQLQuery("SELECT * FROM gamesstates WHERE gameID = :param");
+            sqlQuery.setParameter("param",gameID);
+            states = (List<GamesstatesEntity>) sqlQuery.addEntity(GamesstatesEntity.class).list();
+            if(states.isEmpty()) return false;
+            session.delete(states.get(states.size()-1));
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -56,6 +56,9 @@ public class GameStateManager {
         } finally {
             session.close();
         }
+        HibernateUtil.shutdown();
+
+        return true;
     }
 
 
